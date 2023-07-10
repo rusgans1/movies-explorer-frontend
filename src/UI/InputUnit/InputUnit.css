@@ -1,0 +1,49 @@
+.input-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.input-unit__label {
+  color: #8b8b8b;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.21;
+}
+
+.input-unit__label:not(:first-child) {
+  margin-top: 20px;
+}
+
+.input-unit__input {
+  margin-top: 10px;
+  padding: 15px 15px ;
+  width: 100%;
+  background-color: #2F2F2F;
+  border: unset;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.21;
+}
+
+.input-unit__input_invalid {
+  color: #ee3465;
+}
+
+.input-unit__label_error {
+  height: 22px;
+  opacity: 0;
+}
+
+.input-unit__label_error_validation {
+  margin-top: 10px;
+  height: unset;
+  opacity: 1;
+  color: #ee3465;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.21;
+}
