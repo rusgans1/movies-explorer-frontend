@@ -38,6 +38,7 @@
   height: 12px;
   background-color: unset;
   border: unset;
+  cursor: pointer;
 }
 
 .movies-card__cover {

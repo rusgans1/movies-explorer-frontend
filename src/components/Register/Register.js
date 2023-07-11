@@ -30,7 +30,7 @@ function Register() {
           buttonText={"Зарегистрироваться"}
           paragraphText={"Уже зарегистрированы?"}
           linkText={"Войти"}
-          linkRoute={"/signup"}
+          linkRoute={"/signin"}
         ></ButtonUnit>
       </FormUnit>
     </section>

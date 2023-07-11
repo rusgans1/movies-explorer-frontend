@@ -82,6 +82,10 @@
     letter-spacing: -0.72px;
     border-color: #e6e6e6;
   }
+
+  .portfolio__link-icon {
+    width: 10px;
+  }
 }
 
 @media (min-width: 1281px) {

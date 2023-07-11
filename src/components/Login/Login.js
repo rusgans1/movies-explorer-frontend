@@ -23,7 +23,7 @@ function Login() {
           buttonText={"Войти"}
           paragraphText={"Ещё не зарегистрированы?"}
           linkText={"Регистрация"}
-          linkRoute={"/signin"}
+          linkRoute={"/signup"}
         ></ButtonUnit>
       </FormUnit>
     </section>

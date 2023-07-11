@@ -6,11 +6,11 @@
 }
 
 .button-unit_page_signin {
-  margin-top: 179px;
+  margin-top: 69px;
 }
 
 .button-unit_page_signup {
-  margin-top: 69px;
+  margin-top: 179px;
 }
 
 .button-unit__button {
@@ -27,6 +27,12 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 1.21;
+  transition: opacity 0.3s ease-in-out;
+  cursor: pointer
+}
+
+.button-unit__button:hover {
+  opacity: 0.6;
 }
 
 .button-unit__text {
@@ -45,15 +51,21 @@
   font-size: 14px;
   line-height: 1.21;
   text-decoration: unset;
+  transition: opacity 0.3s ease-in-out;
+  cursor: pointer
+}
+
+.button-unit__link:hover {
+  opacity: 0.6;
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
   .button-unit_page_signin {
-    margin-top: 267px;
+    margin-top: 157px;
   }
 
   .button-unit_page_signup {
-    margin-top: 157px;
+    margin-top: 267px;
   }
 
   .button-unit__button {

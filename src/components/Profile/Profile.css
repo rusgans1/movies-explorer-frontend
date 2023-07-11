@@ -22,7 +22,7 @@
   align-items: center;
   width: 410px;
   height: 100%;
-  margin: 123px 0 220px;
+  margin: 123px 0 0;
 }
 
 .profile__input-container {
@@ -57,6 +57,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 220px;
 }
 
 .profile__link_edit {
@@ -80,7 +81,11 @@
   }
   
   .profile__form {
-    margin: 96px 0 210px;
+    margin-top: 96px;
+  }
+
+  .profile__links {
+    margin-top: 210px;
   }
 }
 
@@ -90,8 +95,12 @@
   }
   
   .profile__form {
-    min-width: 260px;
-    margin: 80px 0 379px;
+    width: 260px;
+    margin-top: 80px;
+  }
+
+  .profile__links {
+    margin-top: 379px;
   }
   
   .profile__link_edit {

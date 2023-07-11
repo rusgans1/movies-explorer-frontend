@@ -62,6 +62,12 @@
   font-weight: 400;
   font-size: 13px;
   line-height: 1.38;
+  transition: opacity 0.3s ease-in-out;
+  cursor: pointer
+}
+
+.header__link-logged:hover {
+  opacity: 0.7;
 }
 
 .header__link-logged_active {
@@ -69,6 +75,12 @@
   margin-top: 9px;
   padding-bottom: 8px;
   border-bottom: none;
+  transition: opacity 0.3s ease-in-out;
+  cursor: pointer
+}
+
+.header__link-logged_active:hover {
+  opacity: 0.7;
 }
 
 .header__link-logged:last-child {
@@ -88,18 +100,30 @@
   height: 30px;
   background-image: url(../../images/header-login-icon.svg);
   background-repeat: no-repeat;
-  background-position: 8px center;
+  background-position: right 8px center;
   color: #fff;
   text-decoration: none;
   font-weight: 500;
   font-size: 14px;
   line-height: 16px;
+  transition: opacity 0.3s ease-in-out;
+  cursor: pointer
+}
+
+.header__profile-logged:hover {
+  opacity: 0.7;
 }
 
 .header__profile-logged_active {
   background-image: url(../../images/header-active-login-icon.svg);
   background-position: right 3px center;
   border: none;
+  transition: opacity 0.3s ease-in-out;
+  cursor: pointer
+}
+
+.header__profile-logged_active:hover {
+  opacity: 0.7;
 }
 
 @media (min-width: 320px) and (max-width: 900px) {
@@ -145,7 +169,7 @@
 @media (min-width: 520px) and (max-width: 900px) {
   .header__container-logged_active {
     padding-top: 159px;
-    padding-bottom: 90px;
+    padding-bottom: 92px;
   }
 
   .header__link_active-logged {
@@ -170,5 +194,10 @@
 
   .header__link-logged:not(:first-child) {
     margin-top: 24px;
+  }
+
+  .header__burger-menu-close-button {
+    right: 13.44px;
+    top: 13.44px;
   }
 }
