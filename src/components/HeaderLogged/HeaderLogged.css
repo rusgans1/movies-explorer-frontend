@@ -170,6 +170,10 @@
     margin-bottom: -6px;
   }
 
+  .header__link-logged {
+    margin-left: 0;
+  }
+
   .header__link-logged:not(:first-child) {
     margin-top: 28px;
   }
