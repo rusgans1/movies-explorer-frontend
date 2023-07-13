@@ -1,0 +1,133 @@
+.techs {
+  padding: 100px 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #272727;
+}
+
+.techs__title {
+  width: 100%;
+  margin: 0;
+  padding-bottom: 23px;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.21;
+  letter-spacing: -0.88px;
+  border-bottom: solid 1px #dadada;
+}
+
+.techs__subtitle {
+  margin: 90px 0 26px;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 1.16;
+  letter-spacing: -2px;
+}
+
+.techs__paragraph {
+  margin: 0;
+  max-width: 460px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.43;
+  letter-spacing: -0.56px;
+}
+
+.techs__row {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(max-content, 84px));
+  grid-gap: 10px;
+  justify-content: center;
+  width: 100%;
+}
+
+.techs__stek {
+  margin: 0;
+  max-width: 90px;
+  width: 100%;
+  height: 60px;
+  background-color: #303030;
+  border-radius: 10px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.21;
+  letter-spacing: -0.56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 768px) and (max-width: 1280px) {
+  .techs {
+    padding: 90px 50px;
+  }
+
+  .techs__subtitle {
+    margin-top: 80px;
+    margin-bottom: 22px;
+  }
+
+  .techs__paragraph {
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: -0.48px;
+  }
+
+  .techs__stek {
+    font-size: 12px;
+    letter-spacing: -0.48px;
+    max-width: 84px;
+    width: 100%;
+    height: 57px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .techs {
+    padding: 70px 18px;
+  }
+  
+  .techs__title {
+    padding-bottom: 28px;
+    font-size: 18px;
+    letter-spacing: -0.72px;
+    border-color: #000;
+  }
+
+  .techs__subtitle {
+    margin-top: 60px;
+    margin-bottom: 24px;
+    font-size: 30px;
+    letter-spacing: -1.2px;
+  }
+
+  .techs__paragraph {
+    font-size: 11px;
+    line-height: 1.45;
+    letter-spacing: -0.44px;
+  }
+
+  .techs__row {
+    box-sizing: border-box;
+    padding-left: 53px;
+    padding-right: 53px;
+    margin-top: 50px;
+  }
+
+  .techs__stek {
+    width: 84px;
+    height: 57px;
+    font-size: 12px;
+    letter-spacing: -0.48px;
+  }
+}
+
+@media (min-width: 1281px) {
+  .techs {
+    padding-left: calc(70px + (100vw - 1280px) / 2);
+    padding-right: calc(70px + (100vw - 1280px) / 2);
+  }
+}

@@ -1,0 +1,31 @@
+.form-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  height: 100%;
+  padding-bottom: 70px;
+  background-color: #202020;
+}
+
+.form-unit__form {
+  display: flex;
+  flex-direction: column;
+  max-width: 396px;
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 768px) and (max-width: 1280px) {
+  .form-unit {
+    padding-bottom: 232px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .form-unit {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+  }
+}
