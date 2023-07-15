@@ -8,6 +8,8 @@ function MoviesCard({ film, onSavedClick, onDeleteClick, isLiked }) {
 
   let location = useLocation();
   const isMoviesLocation = location.pathname === "/movies";
+  const hour = (film.duration / 60).toFixed(0);
+  const min = film.duration % 60;
 
   function handleLikeClick(e) {
     e.preventDefault();
@@ -28,7 +30,7 @@ function MoviesCard({ film, onSavedClick, onDeleteClick, isLiked }) {
       <div className="movies-card__container">
         <div className="movies-card__text-container">
           <h2 className="movies-card__film-name">{film.nameRU}</h2>
-          <p className="movies-card__film-duration">{film.duration}</p>
+          <p className="movies-card__film-duration">{hour}ч {min < 10 ? '0' + min : min}м</p>
         </div>
         {isMoviesLocation ? (
           <button
