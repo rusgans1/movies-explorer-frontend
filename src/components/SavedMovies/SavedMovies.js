@@ -11,7 +11,7 @@ function SavedMovies({ savedMovies, onDeleteClick, isLoading }) {
   const [isEmptyList, setIsEmptyList] = useState(false);
   const [isUnfindFilms, setIsUnfindFilms] = useState(false);
 
-  function handleButtonFilterClick(inputValue) {
+  function handleFilterButtonClick(inputValue) {
     setInputValue(inputValue);
   }
 
@@ -49,7 +49,7 @@ function SavedMovies({ savedMovies, onDeleteClick, isLoading }) {
   return (
     <>
       <SearchForm
-        onClickFilterButton={handleButtonFilterClick}
+        onClickFilterButton={handleFilterButtonClick}
         onClickCheckBox={handleCheckboxClick}
         isChecked={isChecked}
       />

@@ -10,7 +10,7 @@ function SearchForm({ onClickFilterButton, onClickCheckBox, searchValue, isCheck
     setFilmFilter(e.target.value);
   }
 
-  function handleButtonFilter(e) {
+  function handleFilterButton(e) {
     e.preventDefault();
     onClickFilterButton(filmFilter);
   }
@@ -32,7 +32,7 @@ function SearchForm({ onClickFilterButton, onClickCheckBox, searchValue, isCheck
           className="search-form__button" 
           alt="Найти"
           type="submit"
-          onClick={handleButtonFilter}
+          onClick={handleFilterButton}
         >
           Найти
         </button>
@@ -41,7 +41,7 @@ function SearchForm({ onClickFilterButton, onClickCheckBox, searchValue, isCheck
         <FilterCheckbox onClick={onClickCheckBox} isChecked={isChecked} />
         <label
           className="search-form__checkbox-label"
-          for="switch"
+          htmlFor="switch"
           onClick={onClickCheckBox}
         >
           Короткометражки

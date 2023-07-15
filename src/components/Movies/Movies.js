@@ -28,7 +28,7 @@ function Movies({
       : false
   );
 
-  function handleButtonFilterClick(inputValue) {
+  function handleFilterButtonClick(inputValue) {
     setInputValue(inputValue);
     localStorage.setItem("inputValue", inputValue);
   }
@@ -68,7 +68,7 @@ function Movies({
   return (
     <>
       <SearchForm
-        onClickFilterButton={handleButtonFilterClick}
+        onClickFilterButton={handleFilterButtonClick}
         onClickCheckBox={handleCheckboxClick}
         searchValue={inputValue}
         isChecked={isChecked}
