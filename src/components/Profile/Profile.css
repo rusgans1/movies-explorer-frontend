@@ -53,21 +53,25 @@
   line-height: 1.21;
 }
 
-.profile__links {
+.profile__buttons {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 220px;
 }
 
-.profile__link_edit {
+.profile__error-message_success {
+  color: #adff2f;
+}
+
+.profile__button_edit {
   margin: 0;
   font-weight: 400;
   font-size: 13px;
   line-height: 1.21;
 }
 
-.profile__link_logout {
+.profile__button_logout {
   margin: 16px 0 0;
   font-weight: 500;
   font-size: 13px;
@@ -84,7 +88,7 @@
     margin-top: 96px;
   }
 
-  .profile__links {
+  .profile__buttons {
     margin-top: 210px;
   }
 }
@@ -99,15 +103,15 @@
     margin-top: 80px;
   }
 
-  .profile__links {
+  .profile__buttons {
     margin-top: 379px;
   }
   
-  .profile__link_edit {
+  .profile__button_edit {
     font-size: 12px;
   }
   
-  .profile__link_logout {
+  .profile__button_logout {
     font-size: 12px;
   }
 }
