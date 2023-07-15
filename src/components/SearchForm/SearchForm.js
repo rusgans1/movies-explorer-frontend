@@ -30,7 +30,6 @@ function SearchForm({ onClickFilterButton, onClickCheckBox, searchValue, isCheck
         </div>
         <button
           className="search-form__button" 
-          alt="Найти"
           type="submit"
           onClick={handleFilterButton}
         >

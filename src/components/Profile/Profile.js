@@ -9,7 +9,7 @@ function Profile({ onUpdateInfoClick, onLogOutClick, isLoading }) {
 
   const [isActiveButton, setIsActiveButton] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-  const [isSuccessMessage, setIsSuccessMessage] = useState(false);
+  const [isSuccessMessage, setIsSuccessMessage] = useState("");
   const [isInputDisabled, setIsInputDisabled] = useState(false);
   const { values, valuesValid, handleChange, setValues } = useValues(
     {}, { name: true, email: true });
@@ -99,22 +99,22 @@ function Profile({ onUpdateInfoClick, onLogOutClick, isLoading }) {
               {errorMessage !== "" && (
                 <p
                   className={`profile__error-message ${
-                    isSuccessMessage ? "profile__error-message_success" : ""
+                    isSuccessMessage && "profile__error-message_success"
                   }`}
                 >
                   {errorMessage}
                 </p>
               )}
               <button
-                onClick={handleUpdateInfoButton}
                 className="profile__button_edit"
+                onClick={handleUpdateInfoButton}
                 disabled={isActiveButton ? "" : true}
               >
                 Редактировать
               </button>
               <button
-                type="button"
                 className="profile__button_logout"
+                type="button"
                 onClick={onLogOutClick}
               >
                 Выйти из аккаунта
