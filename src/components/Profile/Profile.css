@@ -29,7 +29,6 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  flex-direction: row-reverse;
 }
 
 .profile__input-container:first-child {
