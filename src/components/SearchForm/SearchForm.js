@@ -43,7 +43,6 @@ function SearchForm({ onClickFilterButton, onClickCheckBox, searchValue, isCheck
           className="search-form__checkbox-label"
           for="switch"
           onClick={onClickCheckBox}
-          isChecked={isChecked}
         >
           Короткометражки
         </label>
