@@ -6,11 +6,13 @@ import { namePattern, emailPattern } from "../../utils/constans";
 
 function Profile({ onUpdateInfoClick, onLogOutClick, isLoading }) {
   const currentUser = useContext(CurrentUserContext);
-  const { values, valuesValid, handleChange, setValues } = useValues(
-    {}, { name: true, email: true });
+
   const [isActiveButton, setIsActiveButton] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [isSuccessMessage, setIsSuccessMessage] = useState(false);
+  const [isInputDisabled, setIsInputDisabled] = useState(false);
+  const { values, valuesValid, handleChange, setValues } = useValues(
+    {}, { name: true, email: true });
 
   useEffect(() => {
     setValues(currentUser);
