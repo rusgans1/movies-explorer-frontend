@@ -116,7 +116,7 @@ function App() {
     api
       .changeUserInfo(data)
       .then((newUserInfo) => {
-        stateMessage(errorMessage.successUpdateUser);
+        stateMessage(errorMessage.successUpdateMessage);
         stateIsSuccess(true);
         setCurrentUser(newUserInfo);
       })

@@ -10,7 +10,7 @@ function FilterCheckbox({ onClick, isChecked }) {
         onChange={onClick}
         checked={isChecked}
       ></input>
-      <label className="filter__checkbox-label" htmlFor="switch"></label>
+      <label className="filter__checkbox-label" for="switch"></label>
       <div className="filter__background"></div>
       <span className="filter__tumb"></span>
     </div>

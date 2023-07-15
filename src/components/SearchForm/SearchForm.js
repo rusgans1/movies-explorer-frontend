@@ -40,7 +40,7 @@ function SearchForm({ onClickFilterButton, onClickCheckBox, searchValue, isCheck
         <FilterCheckbox onClick={onClickCheckBox} isChecked={isChecked} />
         <label
           className="search-form__checkbox-label"
-          htmlFor="switch"
+          for="switch"
           onClick={onClickCheckBox}
         >
           Короткометражки
