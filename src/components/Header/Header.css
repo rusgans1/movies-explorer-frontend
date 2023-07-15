@@ -1,5 +1,8 @@
-.header_main {
+.header {
   display: flex;
+}
+
+.header_main {
   justify-content: space-between;
   align-items: center;
   padding: 18px 70px;
@@ -11,6 +14,10 @@
   align-items: center;
   padding: 18px 70px;
   background-color: #202020;
+}
+
+.header_logged_main {
+  background-color: #073042;
 }
 
 .header_sign {

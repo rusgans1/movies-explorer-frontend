@@ -3,7 +3,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
-function Layout() {
+function Layout({ isSuccess }) {
   let location = useLocation();
 
   const accessFooterRoutes = ["/", "/movies", "/saved-movies"];
@@ -11,7 +11,7 @@ function Layout() {
 
   return (
     <div className="layout">
-      <Header />
+      <Header isSuccess={isSuccess} />
       <main className="main">
         <Outlet />
       </main>

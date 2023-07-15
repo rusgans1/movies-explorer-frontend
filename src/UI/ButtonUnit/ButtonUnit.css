@@ -13,6 +13,13 @@
   margin-top: 179px;
 }
 
+.button-unit__error {
+  color: #ff004c;
+  font-size: 11px;
+  line-height: 1.21;
+  margin-top: 20px;
+}
+
 .button-unit__button {
   display: flex;
   justify-content: center;
@@ -33,6 +40,11 @@
 
 .button-unit__button:hover {
   opacity: 0.6;
+}
+
+.button-unit__button:disabled {
+  background-color: #f8f8f8;
+  color: #c2c2c2;
 }
 
 .button-unit__text {
