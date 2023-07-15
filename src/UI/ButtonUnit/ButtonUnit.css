@@ -35,7 +35,7 @@
   font-size: 14px;
   line-height: 1.21;
   transition: opacity 0.3s ease-in-out;
-  cursor: pointer
+  cursor: pointer;
 }
 
 .button-unit__button:hover {
@@ -43,8 +43,13 @@
 }
 
 .button-unit__button:disabled {
-  background-color: #f8f8f8;
+  background-color: #2F2F2F;
   color: #c2c2c2;
+  cursor: default;
+}
+
+.button-unit__button:disabled:hover {
+  opacity: 1;
 }
 
 .button-unit__text {
