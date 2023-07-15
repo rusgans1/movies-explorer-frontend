@@ -93,10 +93,20 @@
   background: unset;
   border: unset;
   cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.profile__button_edit:hover {
+  opacity: 0.7;
 }
 
 .profile__button_edit:disabled {
   color: #424242;
+  cursor: default;
+}
+
+.profile__button_edit:disabled:hover {
+  opacity: 1;
 }
 
 .profile__button_logout {
@@ -109,6 +119,11 @@
   background: unset;
   border: unset;
   cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.profile__button_logout:hover {
+  opacity: 0.7;
 }
 
 .profile__button_logout:disabled {
