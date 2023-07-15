@@ -2,14 +2,14 @@ import "./Profile.css";
 import { useState, useContext, useEffect } from "react";
 import { CurrentUserContext } from "../../context/CurrentUserContext";
 import { useValues } from "../../hooks/useValues";
-import { namePattern, emailPattern } from "../../utils/constans";
+import { namePattern, emailPattern, successUpdateMessage } from "../../utils/constans";
 
 function Profile({ onUpdateInfoClick, onLogOutClick, isLoading }) {
   const currentUser = useContext(CurrentUserContext);
 
   const [isActiveButton, setIsActiveButton] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-  const [isSuccessMessage, setIsSuccessMessage] = useState("");
+  const [setIsSuccessMessage] = useState("");
   const [isInputDisabled, setIsInputDisabled] = useState(false);
   const { values, valuesValid, handleChange, setValues } = useValues(
     {}, { name: true, email: true });
@@ -99,7 +99,7 @@ function Profile({ onUpdateInfoClick, onLogOutClick, isLoading }) {
               {errorMessage !== "" && (
                 <p
                   className={`profile__error-message ${
-                    isSuccessMessage && "profile__error-message_success"
+                    successUpdateMessage && "profile__error-message_success"
                   }`}
                 >
                   {errorMessage}
