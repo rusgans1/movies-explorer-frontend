@@ -9,8 +9,8 @@ import ButtonUnit from "../../UI/ButtonUnit/ButtonUnit";
 function Register({ onSubmitClick }) {
   const { values, valuesValid, handleChange } = useValues({}, {});
   const [isActiveButton, setIsActiveButton] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
   const [isInputDisabled, setIsInputDisabled] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     function checkValidation() {
@@ -21,7 +21,6 @@ function Register({ onSubmitClick }) {
           : setIsActiveButton(true);
       }
     }
-
     checkValidation();
   }, [valuesValid]);
 
@@ -30,8 +29,8 @@ function Register({ onSubmitClick }) {
     onSubmitClick(
       values,
       setIsActiveButton,
-      setErrorMessage,
-      setIsInputDisabled
+      setIsInputDisabled,
+      setErrorMessage
     );
   }
 

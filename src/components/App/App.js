@@ -31,7 +31,7 @@ function App() {
     navigate("/server-error");
   }
 
-  function tokenCheck() {
+  function userCheck() {
     api.getUserInfo()
       .then((res) => {
         if(res) {
@@ -44,7 +44,7 @@ function App() {
   }
 
   useEffect(() => {
-    tokenCheck()
+    userCheck()
   }, []);
 
   useEffect(() => {
@@ -67,7 +67,7 @@ function App() {
     }
   }, [isSuccess]);
 
-  function handleLoginUser(
+  async function handleLoginUser(
     values,
     setIsActiveButton,
     setIsInputDisabled,
@@ -98,15 +98,20 @@ function App() {
   function handleRegisterUser(
     values,
     setIsActiveButton,
+    setIsInputDisabled,
     setErrorMessage,
-    setIsInputDisabled
   ) {
     setIsInputDisabled(true);
     setIsActiveButton(false);
     api
       .register(values)
-      .then(() => {
-        handleLoginUser(values, setIsInputDisabled);
+      .then(async () => {
+        await handleLoginUser(
+          values,
+          setIsActiveButton,
+          setIsInputDisabled,
+          setErrorMessage
+          );
       })
       .catch((err) => {
         if (err.status === 409) {
