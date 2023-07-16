@@ -1,5 +1,5 @@
 export const namePattern = "[a-zA-Zа-яА-Я0-9 -]{2,30}";
-export const emailPattern = "[a-z0-9]{2,30}@[a-z]{2,10}\\.[a-z]{2,5}";
+export const emailPattern = "[a-zA-Z0-9_.]+@[a-zA-Z0-9_]+\\.{1,1}[a-z]{2,}";
 
 export const unfindError = {
   errorCode: 404,

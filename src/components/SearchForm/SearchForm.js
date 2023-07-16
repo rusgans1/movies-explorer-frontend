@@ -2,9 +2,9 @@ import "./SearchForm.css";
 import { useState } from "react";
 import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
 
-function SearchForm({ onClickFilterButton, onClickCheckBox, searchValue, isChecked }) {
+function SearchForm({ onClickFilterButton, onClickCheckBox, searchValue, isChecked  }) {
   const [filmFilter, setFilmFilter] = useState(searchValue ? searchValue : "");
-
+  
   function handleFilmFilter(e) {
     e.preventDefault();
     setFilmFilter(e.target.value);
@@ -40,8 +40,7 @@ function SearchForm({ onClickFilterButton, onClickCheckBox, searchValue, isCheck
         <FilterCheckbox onClick={onClickCheckBox} isChecked={isChecked} />
         <label
           className="search-form__checkbox-label"
-          for="switch"
-          onClick={onClickCheckBox}
+          htmlFor="switch"
         >
           Короткометражки
         </label>
