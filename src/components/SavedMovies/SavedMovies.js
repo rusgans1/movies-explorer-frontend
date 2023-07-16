@@ -1,6 +1,6 @@
 import "./SavedMovies.css";
 import { useState, useEffect } from "react";
-import { shortFilmDuration } from "../../utils/constans";
+import { SHORT_FILM_DURATION } from "../../utils/constans";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import SearchForm from "../SearchForm/SearchForm";
 
@@ -35,11 +35,13 @@ function SavedMovies({ savedMovies, onDeleteClick, isLoading }) {
   useEffect(() => {
     let array = savedMovies.filter((movie) => {
       if (isChecked) {
-        return movie.nameRU.toLowerCase().includes(inputValue.toLowerCase());
-      } else {
         return (
           movie.nameRU.toLowerCase().includes(inputValue.toLowerCase()) &&
-          movie.duration > shortFilmDuration
+          movie.duration <= SHORT_FILM_DURATION
+        );
+      } else {
+        return (
+          movie.nameRU.toLowerCase().includes(inputValue.toLowerCase())
         );
       }
     });

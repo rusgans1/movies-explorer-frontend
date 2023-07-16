@@ -1,7 +1,7 @@
 import "./Movies.css";
 import React from "react";
 import { useEffect, useState } from "react";
-import { shortFilmDuration } from "../../utils/constans";
+import { SHORT_FILM_DURATION } from "../../utils/constans";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import SearchForm from "../SearchForm/SearchForm";
 
@@ -13,7 +13,7 @@ function Movies({
   savedMovies,
 }) {
   const localInputValue = localStorage.getItem("inputValue");
-  const localCheckBoxStatus = localStorage.getItem("checkboxStatus");
+  const localCheckBoxStatus = localStorage.getItem("CheckboxStatus");
   const [filteredMoviesList, setFilteredMoviesList] = useState([]);
   const [isFirstLog, setIsFirstLog] = useState(false);
   const [isUnfindFilms, setIsUnfindFilms] = useState(false);
@@ -54,11 +54,13 @@ function Movies({
   useEffect(() => {
     let array = movies.filter((movie) => {
       if (isChecked) {
-        return movie.nameRU.toLowerCase().includes(inputValue.toLowerCase());
-      } else {
         return (
           movie.nameRU.toLowerCase().includes(inputValue.toLowerCase()) &&
-          movie.duration > shortFilmDuration
+          movie.duration <= SHORT_FILM_DURATION
+        );
+      } else {
+        return (
+          movie.nameRU.toLowerCase().includes(inputValue.toLowerCase())
         );
       }
     });

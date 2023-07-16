@@ -1,7 +1,7 @@
 import "./Login.css";
 import { useEffect, useState } from "react";
 import { useValues } from "../../hooks/useValues";
-import { emailPattern } from "../../utils/constans";
+import { EMAIL_PATTERN } from "../../utils/constans";
 import FormUnit from "../../UI/FormUnit/FormUnit";
 import InputUnit from "../../UI/InputUnit/InputUnit";
 import ButtonUnit from "../../UI/ButtonUnit/ButtonUnit";
@@ -44,7 +44,7 @@ function Login({ onSubmitClick }) {
           inputValue={values.email}
           inputValid={valuesValid.email}
           inputOnChange={handleChange}
-          inputPattern={emailPattern}
+          inputPattern={EMAIL_PATTERN}
           inputActive={isInputDisabled}
           errorText={"Email не соответствует"}
         />

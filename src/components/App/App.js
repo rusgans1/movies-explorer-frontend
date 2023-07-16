@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
 import { CurrentUserContext } from "../../context/CurrentUserContext";
-import { unfindError, serverError, errorMessage } from "../../utils/constans";
+import { UNFIND_ERROR, SERVER_ERROR, ERROR_MESSAGE } from "../../utils/constans";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import api from "../../utils/MainApi";
 import Layout from "../Layout/Layout";
@@ -31,6 +31,22 @@ function App() {
     navigate("/server-error");
   }
 
+  function tokenCheck() {
+    api.getUserInfo()
+      .then((res) => {
+        if(res) {
+          setIsSuccess(true)
+          setCurrentUser({ email: res.email, name: res.name })
+          navigate("/movies")
+        }
+      })
+      .catch(() => navigate("/signin"))
+  }
+
+  useEffect(() => {
+    tokenCheck()
+  }, []);
+
   useEffect(() => {
     if (isSuccess) {
       setIsLoading(true);
@@ -52,86 +68,89 @@ function App() {
   }, [isSuccess]);
 
   function handleLoginUser(
-    data,
-    stateInputDisabled,
-    stateButton,
-    stateMessage
+    values,
+    setIsActiveButton,
+    setIsInputDisabled,
+    setErrorMessage
   ) {
-    stateInputDisabled(true);
+    setIsInputDisabled(true);
+    setIsActiveButton(false);
     api
-      .authorization(data)
+      .authorization(values)
       .then(() => {
         setIsSuccess(true);
         navigate("/movies");
         localStorage.setItem("isSuccess", true);
       })
       .catch((err) => {
-        stateButton(false);
         if (err.status === 401) {
-          stateMessage(errorMessage.errorLogin);
+          setErrorMessage(ERROR_MESSAGE.errorLogin);
         } else {
           navigateServerErrorPage();
         }
       })
       .finally(() => {
-        stateInputDisabled(false);
+        setIsInputDisabled(false);
+        setIsActiveButton(true);
       });
   }
 
   function handleRegisterUser(
-    data,
-    stateInputDisabled,
-    stateButton,
-    stateMessage
+    values,
+    setIsActiveButton,
+    setErrorMessage,
+    setIsInputDisabled
   ) {
-    stateInputDisabled(true);
+    setIsInputDisabled(true);
+    setIsActiveButton(false);
     api
-      .register(data)
+      .register(values)
       .then(() => {
-        handleLoginUser(data, stateInputDisabled);
+        handleLoginUser(values, setIsInputDisabled);
       })
       .catch((err) => {
-        stateButton(false);
         if (err.status === 409) {
-          stateMessage(errorMessage.errorEmail);
+          setErrorMessage(ERROR_MESSAGE.errorEmail);
         } else if (Math.floor(err.status / 100) === 5) {
           navigateServerErrorPage();
         } else {
-          stateMessage(errorMessage.errorRegister);
+          setErrorMessage(ERROR_MESSAGE.errorRegister);
         }
       })
       .finally(() => {
-        stateInputDisabled(false);
+        setIsInputDisabled(false);
+        setIsActiveButton(true);
       });
   }
 
   function handleChangeUserInfo(
-    data,
-    stateInputDisabled,
-    stateIsSuccess,
-    stateButton,
-    stateMessage
+    values,
+    setIsActiveButton,
+    setIsInputDisabled,
+    setIsSuccessMessage,
+    setErrorMessage
   ) {
-    stateInputDisabled(true);
+    setIsInputDisabled(true);
+    setIsActiveButton(false);
     api
-      .changeUserInfo(data)
+      .changeUserInfo(values)
       .then((newUserInfo) => {
-        stateMessage(errorMessage.successUpdateMessage);
-        stateIsSuccess(true);
+        setIsSuccessMessage(true);
+        setErrorMessage(ERROR_MESSAGE.successUpdateMessage);
         setCurrentUser(newUserInfo);
       })
       .catch((err) => {
-        stateButton(false);
         if (err.status === 409) {
-          stateMessage(errorMessage.errorEmail);
+          setErrorMessage(ERROR_MESSAGE.errorEmail);
         } else if (Math.floor(err.status / 100) === 5) {
           navigateServerErrorPage();
         } else {
-          stateMessage(errorMessage.errorUpdateUserInfo);
+          setErrorMessage(ERROR_MESSAGE.errorUpdateUserInfo);
         }
       })
       .finally(() => {
-        stateInputDisabled(false);
+        setIsInputDisabled(false);
+        setIsActiveButton(true);
       });
   }
 
@@ -241,9 +260,9 @@ function App() {
         </Route>
         <Route
           path="/server-error"
-          element={<ErrorRoute errorData={serverError} />}
+          element={<ErrorRoute errorData={SERVER_ERROR} />}
         />
-        <Route path="*" element={<ErrorRoute errorData={unfindError} />} />
+        <Route path="*" element={<ErrorRoute errorData={UNFIND_ERROR} />} />
       </Routes>
     </CurrentUserContext.Provider>
   );

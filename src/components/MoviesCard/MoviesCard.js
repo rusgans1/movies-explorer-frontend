@@ -8,7 +8,7 @@ function MoviesCard({ film, onSavedClick, onDeleteClick, isLiked }) {
 
   let location = useLocation();
   const isMoviesLocation = location.pathname === "/movies";
-  const hour = (film.duration / 60).toFixed(0);
+  const hour = Math.floor(film.duration / 60);
   const min = film.duration % 60;
 
   function handleLikeClick(e) {

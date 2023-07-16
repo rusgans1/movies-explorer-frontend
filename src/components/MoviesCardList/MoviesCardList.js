@@ -1,6 +1,6 @@
 import "./MoviesCardList.css";
 import { useEffect, useState } from "react";
-import { moviesRenderConfig } from "../../utils/constans";
+import { MOVIES_RENDER_CONFIG } from "../../utils/constans";
 import { useResize } from "../../hooks/useResize";
 import MoviesCard from "../MoviesCard/MoviesCard";
 
@@ -16,8 +16,8 @@ function MoviesCardList({
   const [isMoreButton, setIsMoreButton] = useState(false);
   const [renderCount, setRenderCount] = useState(
     isMobileWidth
-      ? moviesRenderConfig.mobileWidth
-      : moviesRenderConfig.desktopWidth
+      ? MOVIES_RENDER_CONFIG.mobileWidth
+      : MOVIES_RENDER_CONFIG.desktopWidth
   );
 
   useEffect(() => {
@@ -76,8 +76,8 @@ function MoviesCardList({
       (data) =>
         data +
         (isMobileWidth
-          ? moviesRenderConfig.moreMobileWidthFilm
-          : moviesRenderConfig.moreDesktopWidthFilm)
+          ? MOVIES_RENDER_CONFIG.moreMobileWidthFilm
+          : MOVIES_RENDER_CONFIG.moreDesktopWidthFilm)
     );
   }
 

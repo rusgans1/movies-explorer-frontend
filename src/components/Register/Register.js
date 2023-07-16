@@ -1,6 +1,6 @@
 import "./Register.css";
 import { useEffect, useState } from "react";
-import { namePattern, emailPattern } from "../../utils/constans";
+import { NAME_PATTERN, EMAIL_PATTERN } from "../../utils/constans";
 import { useValues } from "../../hooks/useValues";
 import FormUnit from "../../UI/FormUnit/FormUnit";
 import InputUnit from "../../UI/InputUnit/InputUnit";
@@ -45,7 +45,7 @@ function Register({ onSubmitClick }) {
           inputValue={values.name}
           inputValid={valuesValid.name}
           inputOnChange={handleChange}
-          inputPattern={namePattern}
+          inputPattern={NAME_PATTERN}
           inputActive={isInputDisabled}
           errorText={"Введите имя правильно"}
         />
@@ -56,7 +56,7 @@ function Register({ onSubmitClick }) {
           inputValue={values.email}
           inputValid={valuesValid.email}
           inputOnChange={handleChange}
-          inputPattern={emailPattern}
+          inputPattern={EMAIL_PATTERN}
           inputActive={isInputDisabled}
           errorText={"Неверный Email"}
         />

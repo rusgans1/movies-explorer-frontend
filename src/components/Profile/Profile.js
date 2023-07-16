@@ -2,7 +2,7 @@ import "./Profile.css";
 import { useState, useContext, useEffect } from "react";
 import { CurrentUserContext } from "../../context/CurrentUserContext";
 import { useValues } from "../../hooks/useValues";
-import { namePattern, emailPattern } from "../../utils/constans";
+import { NAME_PATTERN, EMAIL_PATTERN } from "../../utils/constans";
 
 function Profile({ onUpdateInfoClick, onLogOutClick, isLoading }) {
   const currentUser = useContext(CurrentUserContext);
@@ -47,9 +47,9 @@ function Profile({ onUpdateInfoClick, onLogOutClick, isLoading }) {
     onUpdateInfoClick(
       values,
       setIsActiveButton,
-      setErrorMessage,
       setIsInputDisabled,
-      setIsSuccessMessage
+      setIsSuccessMessage,
+      setErrorMessage
     );
   }
 
@@ -75,7 +75,7 @@ function Profile({ onUpdateInfoClick, onLogOutClick, isLoading }) {
                 type="text"
                 value={values.name}
                 onChange={handleChange}
-                pattern={namePattern}
+                pattern={NAME_PATTERN}
                 disabled={isInputDisabled}
                 required
               ></input>
@@ -90,7 +90,7 @@ function Profile({ onUpdateInfoClick, onLogOutClick, isLoading }) {
                 type="email"
                 value={values.email}
                 onChange={handleChange}
-                pattern={emailPattern}
+                pattern={EMAIL_PATTERN}
                 disabled={isInputDisabled}
                 required
               ></input>
