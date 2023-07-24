@@ -1,6 +1,8 @@
 .movies-list {
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+  height: 100%;
   padding: 70px 70px 80px;
   background-color: #202020;
 }

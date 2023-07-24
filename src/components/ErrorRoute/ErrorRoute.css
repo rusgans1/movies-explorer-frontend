@@ -22,8 +22,11 @@
   line-height: 1.21;
 }
 
-.error-route__link {
+.error-route__button {
   margin-top: auto;
+  padding: 0;
+  background: unset;
+  border: unset;
   color: #4285f4;
   text-decoration: unset;
   font-weight: 400;
@@ -33,14 +36,14 @@
   cursor: pointer
 }
 
-.error-route__link:hover {
+.error-route__button:hover {
   opacity: 0.7;
 }
 
 @media (min-width: 550px) and (max-width: 900px) {
   .error-route {
-    padding-top: 404px;
-    padding-bottom: 222px;
+    padding-top: 290px;
+    padding-bottom: 45px;
   }
 }
 
@@ -60,7 +63,7 @@
     font-size: 12px;
   }
 
-  .error-route__link {
+  .error-route__button {
     font-size: 12px;
   }
 }

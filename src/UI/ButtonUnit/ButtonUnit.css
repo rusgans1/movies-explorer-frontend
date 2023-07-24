@@ -13,6 +13,13 @@
   margin-top: 179px;
 }
 
+.button-unit__error {
+  color: #ff004c;
+  font-size: 11px;
+  line-height: 1.21;
+  margin-top: 20px;
+}
+
 .button-unit__button {
   display: flex;
   justify-content: center;
@@ -28,11 +35,21 @@
   font-size: 14px;
   line-height: 1.21;
   transition: opacity 0.3s ease-in-out;
-  cursor: pointer
+  cursor: pointer;
 }
 
 .button-unit__button:hover {
   opacity: 0.6;
+}
+
+.button-unit__button:disabled {
+  background-color: #2F2F2F;
+  color: #c2c2c2;
+  cursor: default;
+}
+
+.button-unit__button:disabled:hover {
+  opacity: 1;
 }
 
 .button-unit__text {

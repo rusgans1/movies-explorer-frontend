@@ -41,6 +41,7 @@
   height: 40px;
   background-color: #2F2F2F;
   border: unset;
+  outline: unset;
 }
 
 .search-form__button {

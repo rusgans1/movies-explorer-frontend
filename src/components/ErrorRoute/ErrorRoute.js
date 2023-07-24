@@ -1,13 +1,20 @@
-import { Link } from "react-router-dom";
 import "./ErrorRoute.css";
+import { useNavigate } from "react-router-dom";
 
-function ErrorRoute() {
+function ErrorRoute({ errorData }) {
+  const navigate = useNavigate();
+
+  function handleClickBack(e) {
+    e.preventDefault();
+    navigate(-1);
+  }
+
   return (
     <main>
       <section className="error-route">
-        <h1 className="error-route__code">404</h1>
-        <p className="error-route__message">Страница не найдена</p>
-        <Link className="error-route__link" to="/">Назад</Link>
+        <h1 className="error-route__code">{errorData.errorCode}</h1>
+        <p className="error-route__message">{errorData.errorMessage}</p>
+        <button className="error-route__button" type="button" onClick={handleClickBack}>Назад</button>
       </section>
     </main>
   );
